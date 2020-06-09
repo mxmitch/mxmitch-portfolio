@@ -1,17 +1,13 @@
 module.exports = {
-  defaultTitle: 'John Doe',
+  defaultTitle: 'Mitch Lum',
   logo: 'https://portfolio.smakosh.com/favicon/favicon-512.png',
-  author: 'John Doe',
+  author: 'Mitch Lum',
   url: 'https://portfolio.smakosh.com',
-  legalName: 'John Doe',
-  defaultDescription: 'I’m John and I’m a Backend & Devops engineer!',
+  legalName: 'Mitch Lum',
+  defaultDescription: 'I’m Mitch and I’m a Junior Full-Stack Developer',
   socialLinks: {
-    twitter: 'http://www.twitter.com/smakosh',
-    github: 'https://github.com/smakosh',
-    linkedin: 'https://www.linkedin.com/in/ismail-ghallou-630149122/',
-    instagram: 'https://instagram.com/smakosh19',
-    youtube: 'https://www.youtube.com/user/smakoshthegamer',
-    google: 'https://plus.google.com/u/0/+IsmailSmakoshGhallou',
+    github: 'https://github.com/mxmitch',
+    linkedin: 'https://www.linkedin.com/in/mxmitch/'
   },
   googleAnalyticsID: 'UA-88875900-4',
   themeColor: '#6b63ff',
@@ -30,5 +26,5 @@ module.exports = {
     email: 'email',
     phone: 'phone number',
   },
-  foundingDate: '2018',
+  foundingDate: '2020',
 };
