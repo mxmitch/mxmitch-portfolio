@@ -17,11 +17,11 @@ export const Footer = () => (
         </span>
       </Details>
       <Links>
-        {social.map(({ id, name, link, icon }) => (
+       {social.map(({ id, name, link, icon }) => (
           <a key={id} href={link} target="_blank" rel="noopener noreferrer" aria-label={`follow me on ${name}`}>
             <img width="24" src={icon} alt={name} />
           </a>
-        ))}
+        ))} 
       </Links>
     </Flex>
   </Wrapper>
