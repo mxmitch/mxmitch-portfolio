@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 import { Button, Input } from 'components/common';
 import { Error, Center, InputField } from './styles';
 
+const recaptchaRef = React.createRef();
+
 export default () => (
   <Formik
     initialValues={{
@@ -90,8 +92,8 @@ export default () => (
         </InputField>
         {values.name && values.email && values.message && (
           <InputField>
-            <FastField
-              component={Recaptcha}
+            <Recaptcha
+              ref={recaptchaRef}
               sitekey={process.env.GATSBY_PORTFOLIO_RECAPTCHA_KEY}
               name="recaptcha"
               onChange={value => setFieldValue('recaptcha', value)}
