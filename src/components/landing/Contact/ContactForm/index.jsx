@@ -12,7 +12,7 @@ export default () => (
       name: '',
       email: '',
       message: '',
-      recaptcha: '',
+      // recaptcha: '',
       success: false,
     }}
     validationSchema={Yup.object().shape({
@@ -23,7 +23,7 @@ export default () => (
       message: Yup.string().required('Message field is required'),
       // recaptcha: Yup.string().required('Robots are not welcome yet!'),
     })}
-    onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
+    onSubmit={async ({ name, email, message }, { setSubmitting, resetForm /* , setFieldValue */ }) => {
       try {
         await axios({
           method: 'POST',
@@ -39,7 +39,7 @@ export default () => (
         });
         setSubmitting(false);
         setFieldValue('success', true);
-        setTimeout(() => resetForm(), 6000);
+        setTimeout(() => resetForm(), 1000);
       } catch (err) {
         setSubmitting(false);
         setFieldValue('success', false);
