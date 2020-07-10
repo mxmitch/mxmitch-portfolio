@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Formik, Form, FastField, ErrorMessage } from 'formik';
-// import Recaptcha from 'react-google-recaptcha';
+import Recaptcha from 'react-google-recaptcha';
 import * as Yup from 'yup';
 import { Button, Input } from 'components/common';
 import { Error, Center, InputField } from './styles';
@@ -12,7 +12,7 @@ export default () => (
       name: '',
       email: '',
       message: '',
-      // recaptcha: '',
+      recaptcha: '',
       success: false,
     }}
     validationSchema={Yup.object().shape({
@@ -21,7 +21,7 @@ export default () => (
         .email('Invalid email')
         .required('Email field is required'),
       message: Yup.string().required('Message field is required'),
-      // recaptcha: Yup.string().required('Robots are not welcome yet!'),
+      recaptcha: Yup.string().required('Robots are not welcome yet!'),
     })}
     onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
       try {
@@ -39,7 +39,7 @@ export default () => (
         });
         setSubmitting(false);
         setFieldValue('success', true);
-        setTimeout(() => resetForm(), 1000);
+        setTimeout(() => resetForm(), 6000);
       } catch (err) {
         setSubmitting(false);
         setFieldValue('success', false);
@@ -47,7 +47,7 @@ export default () => (
       }
     }}
   >
-    {({ values, touched, errors, /* setFieldValue, */ isSubmitting }) => (
+    {({ values, touched, errors, setFieldValue, isSubmitting }) => (
       <Form>
         <InputField>
           <Input
@@ -88,7 +88,7 @@ export default () => (
           />
           <ErrorMessage component={Error} name="message" />
         </InputField>
-        {/* values.name && values.email && values.message && (
+        {values.name && values.email && values.message && (
           <InputField>
             <FastField
               component={Recaptcha}
@@ -98,7 +98,7 @@ export default () => (
             />
             <ErrorMessage component={Error} name="recaptcha" />
           </InputField>
-        )*/}
+        )}
         {values.success && (
           <InputField>
             <Center>
