@@ -1,76 +1,47 @@
-const config = require('./src/data/config');
+const dotenv = require("dotenv");
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+if (process.env.ENVIRONMENT !== "production") {
+  dotenv.config();
+}
+
+const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: config.defaultTitle,
-    description: config.defaultDescription,
-    author: config.author,
+    title: `Rohit Gupta`,
+    description: `Personal Site`,
+    author: `@rohitguptab`
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        typeName: 'GitHub',
-        fieldName: 'github',
-        url: 'https://api.github.com/graphql',
-        headers: {
-          Authorization: `bearer ${process.env.GATSBY_PORTFOLIO_GITHUB_TOKEN}`,
-        },
-        fetchOptions: {},
-      },
+        name: `images`,
+        path: `${__dirname}/src/images`
+      }
     },
     {
-      resolve: 'gatsby-plugin-nprogress',
+      resolve: "gatsby-source-contentful",
       options: {
-        color: config.themeColor,
-        showSpinner: false,
-      },
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.ACCESS_TOKEN
+      }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        trackingId: config.googleAnalyticsID,
-        head: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-favicon',
-      options: {
-        logo: './static/favicon/favicon-512.png',
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false,
-        },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.defaultTitle,
-        short_name: 'starter',
-        start_url: '/',
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'minimal-ui',
-        icon: './static/favicon/favicon-512.png',
-      },
-    },
-    'gatsby-plugin-offline',
-  ],
+        name: `Rohit Gupta`,
+        short_name: `Rohit Gupta`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#333`,
+        icon: `src/images/fev_icon.png` // This path is relative to the root of the site.
+      }
+    }, // To learn more, visit: https://gatsby.dev/offline // this (optional) plugin enables Progressive Web App + Offline functionality
+    `gatsby-plugin-offline`
+  ]
 };
