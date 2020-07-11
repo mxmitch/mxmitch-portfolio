@@ -19,7 +19,7 @@ export default class Header extends Component {
             <div className="logo">
               <Link to="/">
                 {data.logo.file.url ? (
-                  <img src={data.logo.file.url} alt="logo" />
+                  <img src={data.logo.file.url} alt="logo" width="75px"/>
                 ) : (
                   <span>{data.siteName}</span>
                 )}
@@ -75,7 +75,7 @@ export default class Header extends Component {
                       );
                     })}
 
-                  {data.menus
+                  {/* data.menus
                     .filter(item => item === "Work")
                     .map(t => {
                       return (
@@ -101,7 +101,7 @@ export default class Header extends Component {
                           <Link to={`/#Photos`}>Photos</Link>
                         </li>
                       );
-                    })}
+                    }) */}
                   {data.menus
                     .filter(item => item === "Contact")
                     .map(t => {
@@ -134,7 +134,7 @@ export default class Header extends Component {
                         </li>
                       );
                     })}
-                  {data.menus
+                  {/* data.menus
                     .filter(item => item === "Photos")
                     .map(t => {
                       return (
@@ -142,7 +142,7 @@ export default class Header extends Component {
                           <Link to="/photos">Photos</Link>
                         </li>
                       );
-                    })}
+                    }) */}
                 </ul>
               </div>
             )}
