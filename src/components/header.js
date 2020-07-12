@@ -19,7 +19,7 @@ export default class Header extends Component {
             <div className="logo">
               <Link to="/">
                 {data.logo.file.url ? (
-                  <img src={data.logo.file.url} alt="logo" width="75px"/>
+                  <img src={data.logo.file.url} alt="logo" width="50px"/>
                 ) : (
                   <span>{data.siteName}</span>
                 )}
@@ -61,7 +61,7 @@ export default class Header extends Component {
                     .map(t => {
                       return (
                         <li>
-                          <Link to={`/#Service`}>Service</Link>
+                          <Link to={`/#Service`}>Services</Link>
                         </li>
                       );
                     })}

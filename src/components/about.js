@@ -14,10 +14,10 @@ const Header = ({ data }) => (
         </div>
         <div className="left col-md-7 col-lg-8">
           <div className="about-details">
-            <span className="name">My Name is {data.name}.</span>
-            <h2 className="sub-position">
-              I'm a Professional {data.designation}.
-            </h2>
+          <h2 className="sub-position">
+          I'm a Professional {data.designation}.
+          </h2>
+          <span className="name">But what does that even mean really?</span>
             <div
               dangerouslySetInnerHTML={{
                 __html: data.description.childMarkdownRemark.html
@@ -45,30 +45,6 @@ const Header = ({ data }) => (
             </ul>
             <div className="socials">
               <ul>
-                <li>
-                  <a
-                    className="fab fa-facebook-f"
-                    href={data.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    className="fab fa-twitter"
-                    href={data.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    className="fab fa-instagram"
-                    href={data.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  ></a>
-                </li>
                 <li>
                   <a
                     className="fab fa-linkedin-in"
