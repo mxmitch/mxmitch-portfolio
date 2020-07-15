@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import moment from "moment";
 import { DiscussionEmbed } from "disqus-react";
+import Img from "gatsby-image/withIEPolyfill"
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -11,7 +11,7 @@ import Share from "../components/share";
 export default class blogPost extends Component {
   render() {
     const data = this.props.data.contentfulBlogs;
-    const disqusShortname = "RohitGupta";
+    const disqusShortname = "MitchLum";
     const disqusConfig = {
       identifier: data.id,
       title: data.title
@@ -45,8 +45,9 @@ export default class blogPost extends Component {
               <Img
                 className="feature-img"
                 fixed={data.featureImage.fluid}
-                objectFit="cover"
-                objectPosition="50% 50%"
+                width="100%"
+                height="100%"
+                objectFit="contain"
               />
             ) : (
               <div className="no-image"></div>

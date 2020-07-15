@@ -15,54 +15,37 @@ const Header = ({ data }) => (
         <div className="left col-md-7 col-lg-8">
           <div className="about-details">
           <h2 className="sub-position">
-          I'm a Professional {data.designation}.
+         I build things for the web
           </h2>
-          <span className="name">But what does that even mean really?</span>
-            <div
+            <div className="sub-position"
               dangerouslySetInnerHTML={{
                 __html: data.description.childMarkdownRemark.html
               }}
             />
-            <ul className="details">
-              <li>
-                <strong>Full Name</strong>
-                <p>{data.name}</p>
-              </li>
-              <li>
-                <strong>Age</strong>
-                <p>{data.age} Years</p>
-              </li>
-              <li>
-                <strong>Location</strong>
-                <p>{data.location}</p>
-              </li>
-              <li>
-                <strong>Email</strong>
-                <p>
-                  <a href={`mailto:${data.gmail}`}>{data.gmail}</a>
-                </p>
-              </li>
-            </ul>
-            <div className="socials">
-              <ul>
-                <li>
-                  <a
-                    className="fab fa-linkedin-in"
-                    href={data.linkdin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    className="fab fa-github"
-                    href={data.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  ></a>
-                </li>
-              </ul>
-            </div>
+            <h3>Technical Skills</h3>
+            <hr style={{borderTop:"1px solid black"}}></hr>
+            <table>
+              <tr> 
+                <td><strong>Languages</strong></td>
+                <td>JavaScript, HTML, CSS, Ruby</td>
+              </tr>
+              <tr> 
+                <td><strong>Libraries/Frameworks</strong></td>
+                <td>NodeJS, ReactJS, GatsbyJS, SASS, Rails, Ajax, Express, EJS, jQuery, Bootstrap</td>
+              </tr>
+              <tr> 
+                <td><strong>Testing</strong></td>
+                <td>Jest, Storybook, Cypress, Rspec, Capybara, Mocha, Chai</td>
+              </tr>
+              <tr> 
+                <td><strong>Design Software</strong></td>
+                <td>Photoshop, Illustrator, Sketch, After Effects, Invision</td>
+              </tr>
+              <tr> 
+                <td><strong>Project Management</strong></td>
+                <td>Agile, Scrum, Kanban, Jira </td>
+              </tr>
+            </table>  
           </div>
         </div>
       </div>

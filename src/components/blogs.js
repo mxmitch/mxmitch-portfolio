@@ -10,7 +10,7 @@ export default class Blogs extends Component {
       <div className="blogs-section section" id="Blogs">
         <div className="container">
           <div className="section-head">
-            <h2>Blogs</h2>
+            <h2>Portfolio</h2>
           </div>
           <ul
             className={`blogs-list ${data.edges.length < 5 ? "few-blogs" : ""}`}
@@ -33,7 +33,7 @@ export default class Blogs extends Component {
                     <div className="details">
                       <h3 className="title">{item.node.title}</h3>
                       <span className="date">
-                        <i className="fas fa-calendar-alt"></i>{" "}
+                        <i className="fas fa-calendar-day"></i>{" "}
                         {moment(item.node.createdAt).format("LL")}
                       </span>
                     </div>
@@ -44,7 +44,7 @@ export default class Blogs extends Component {
           </ul>
           <div className="see-more">
             <Link to="/blogs">
-              <span>More Blogs</span>
+              <span>More Case Studies</span>
             </Link>
           </div>
         </div>

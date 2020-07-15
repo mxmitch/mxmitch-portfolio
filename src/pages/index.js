@@ -121,6 +121,11 @@ export const pageQuery = graphql`
               html
             }
           }
+          icon {
+            file {
+              url
+            }
+          }
         }
       }
     }
