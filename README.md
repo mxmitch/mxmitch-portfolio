@@ -1,117 +1,90 @@
-# Portfolio for developers
+  <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+  <p align="center">
+    <a href="https://rg-portfolio.netlify.com/">
+      <img alt="rg-portfolio" src="https://github.com/rohitguptab/rg-portfolio/blob/master/src/images/fev_icon.png" width="50" />
+    </a>
+  </p>
+  <h1 align="center">
+    RG-Portfolio
+  </h1>
+  <img src="https://github.com/rohitguptab/rg-portfolio/blob/master/docs/screenshot.jpg" />
 
-[![Deploy with Vercel](https://vercel.co/button)](https://vercel.co/new/project?template=https://github.com/smakosh/gatsby-portfolio-dev)
+Kick-off your Portfolio website with RG-Portfolio gatsby starter. We have used [Gatsby](https://www.gatsbyjs.org/) + [Contenful](https://www.gatsbyjs.org/packages/gatsby-source-contentful/?=Contenful).
 
-[![Powered by Vercel](./powered-by-vercel.svg)](https://vercel.co?utm_source=smakosh)
+### Live Demo:
 
-## Theme
+https://rg-portfolio.netlify.com/
 
-[Gatsby-theme-portfolio](https://github.com/smakosh/gatsby-theme-portfolio)
+### Feature:
 
-## Features
+- Blogs listing with each blog post.
+- Contact form with Email notification using formspree.io.
+- Photos and Blogs page listing.
+- Different types of sections like About, Service, Blogs, Work, Testimonials, Photos, and contact.
+- All settings manage from contentful for example Header Menu, Homepage sections, blogs, and photos, etc.
+- Social share in blog details pages with comment ( Disqus ).
+- PWA
 
-- Eslint/Prettier configured
-- Scores 100% on a11y / Performance / PWA / SEO
-- PWA (desktop & mobile)
-- Easy to customize
-- Nice project structure
-- Amazing illustrations by [Undraw.co](https://undraw.co)
-- Tablet & mobile friendly
-- Continuous deployment with [Vercel](https://vercel.co/?utm_source=smakosh)
-- Or with Netlify, check [Netlify branch](https://github.com/smakosh/gatsby-portfolio-dev/tree/netlify)
-- A contact form protected by Google Recaptcha
-- Can be deployed with one click
-- Functional components with ~~Recompose~~ React Hooks! ~~ready to migrate to React hooks!~~
-- Fetches your Github pinned projects with most stars (You could customize this if you wish)
+## 🚀 Quick start
 
-## Design
+1.  **Setup this site.**
 
-Project on [Behance](https://www.behance.net/gallery/74172961/Free-Gatsby-portfolio-for-developers)
+    Use the Gatsby CLI to Clone this site.
 
-## Structure
+    ```sh
+    # Clone this Repositories
+    gatsby new rg-portfolio https://github.com/Rohitguptab/rg-portfolio.git
+    ```
 
-```bash
-.
-├── data
-│   └── config              # SEO related tags
-├── src
-│   └── assets              # Assets
-│   │   │── icons             # icons
-│   │   │── illustrations     # illustrations from (undraw.co)
-│   │   └── thumbnail         # cover of your website when it's shared to social media
-│   ├── components          # Components
-│   │   │── common            # Common components
-│   │   │── landing           # Components used on the landing page
-│   │   └── theme             # Header & Footer
-│   └── pages               # Pages
-└── static                  # favicon & Netlify redirects
-```
+1.  **Setup Contentful Models**
 
-## Prerequisites
+    Use [contentful-cli](https://github.com/contentful/contentful-cli) to import the models from contentful-data.json
 
-### Online
+    ```
+    contentful space --space-id <CONTENTFUL_SPACE_ID> import --content-file contentful-data.json
+    ```
+    
+    Checkout my below blog how to Import and Export data from ContentFul
+    
+    [https://rohitgupta.design/import-and-export-data-with-contentful-cli](https://rohitgupta.design/import-and-export-data-with-contentful-cli)
 
-1. Create an account at [Formik](https://formik.com/?utm_source=smakosh) and grab your form endpoint url
-2. Grab a Google recaptcha key from [Google Recaptcha](https://www.google.com/recaptcha/admin)
-3. Grab your Github token from [GitHub](https://github.com/settings/tokens/new?scopes=repo&description=portfolio-dev)
-4. Click [![Deploy with Vercel](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/smakosh/gatsby-portfolio-dev) and pass in your:
-  
-  - Formik form endpoint
-  - Google recaptcha public key
-  - Github token
+1.  **Start developing.**
 
-To Vercel's now secrets UI form.
+    Navigate into your new site’s directory and start it up.
 
-### Locally
+    ```sh
+    cd rg-portfolio
+    npm install
+    gatsby develop
+    ```
 
-1. Create an account at [Formik](https://formik.com/?utm_source=smakosh)
-2. Install [Yarn](https://yarnpkg.com/en/)
-3. Grab a Google recaptcha key from [Google Recaptcha](https://www.google.com/recaptcha/admin)
-4. Run `cp .env.development.template .env.development`
-5. Run `yarn && yarn start`
+1.  **Setup your Own Configure Projects.**
 
-### Deploying locally to Vercel
+    Enter your own key
 
-I highly recommend that you push to GitHub/GitLab and deploy your repository to Vercel instead or just hit the Deploy button.
+    [ContentFul](https://be.contentful.com/login):
 
-Otherwise, you will have to do the following:
+    - spaceId = **Key**
+    - accessToken = **Key**
 
-1. Add your secrets one by one using the [Now CLI](https://vercel.co/docs/now-cli)
-2. Run `now`
+1.  **Open the source code and start editing!**
 
-### Clean the cache
+    Your site is now running at `http://localhost:8000`!
 
-This removes the `.cache/` & `public/` folders
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-```bash
-yarn reset
-```
+    Open the `rg-portfolio` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## Built with
+## 🎓 Learning Gatsby
 
-- Adobe XD
-- Gatsby
-- React & GraphQL
-- Formik
-- Google recaptcha
-- VSCode
-- And these useful of JavaScript libraries & Gatsby plugins [package.json](package.json)
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
-## License
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-## Contributors
+## 💫 Deploy
 
-- [Ajay NS](https://github.com/ajayns) https://github.com/smakosh/gatsby-portfolio-dev/pull/3
-- [Ryan Lee](https://github.com/drdgvhbh) https://github.com/smakosh/gatsby-portfolio-dev/pull/6
-- [David](https://github.com/davidavz) https://github.com/smakosh/gatsby-portfolio-dev/pull/8
-- [Léu Almeida](https://github.com/LeuAlmeida) https://github.com/smakosh/gatsby-portfolio-dev/pull/21
-- [Kudakwashe Mupeni](https://github.com/2wce) https://github.com/smakosh/gatsby-portfolio-dev/pull/20
-- [sasannnn](https://github.com/sasannnn) https://github.com/smakosh/gatsby-portfolio-dev/pull/22
-- [Michael Seifarth](https://github.com/Kageetai) https://github.com/smakosh/gatsby-portfolio-dev/pull/27
-- [Smakosh](https://smakosh.com)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Rohitguptab/rg-portfolio)
 
-## Support
-
-If you love this Gatsby template and want to support me, you can do so through my GitHub profile.
+  <!-- AUTO-GENERATED-CONTENT:END -->

@@ -1,20 +1,20 @@
-const config = require('./src/data/config');
+const dotenv = require("dotenv");
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+if (process.env.ENVIRONMENT !== "production") {
+  dotenv.config();
+}
+
+const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: config.defaultTitle,
-    description: config.defaultDescription,
-    author: config.author,
+    title: `Mitch Lum`,
+    description: `Personal Site`,
+    author: `@mxmitchs`
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
     'gatsby-plugin-styled-components',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-graphql',
       options: {
@@ -28,49 +28,33 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-nprogress',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        color: config.themeColor,
-        showSpinner: false,
-      },
+        name: `images`,
+        path: `${__dirname}/src/images`
+      }
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-source-contentful",
       options: {
-        trackingId: config.googleAnalyticsID,
-        head: true,
-      },
+        spaceId,
+        accessToken
+      }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
-      resolve: 'gatsby-plugin-favicon',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        logo: './static/favicon/favicon-512.png',
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false,
-        },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.defaultTitle,
-        short_name: 'starter',
-        start_url: '/',
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'minimal-ui',
-        icon: './static/favicon/favicon-512.png',
-      },
-    },
-    'gatsby-plugin-offline',
-  ],
+        name: `Mitch Lum`,
+        short_name: `Mitch Lum`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#333`,
+        icon: `src/images/fev_icon.png` // This path is relative to the root of the site.
+      }
+    }, // To learn more, visit: https://gatsby.dev/offline // this (optional) plugin enables Progressive Web App + Offline functionality
+    `gatsby-plugin-offline`
+  ]
 };
