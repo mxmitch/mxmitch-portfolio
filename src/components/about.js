@@ -22,7 +22,7 @@ const Header = ({ data }) => (
                 __html: data.description.childMarkdownRemark.html
               }}
             />
-            <h3>Technical Skills</h3>
+            <h4>Technical Skills</h4>
             <hr style={{borderTop:"1px solid black"}}></hr>
             <table>
               <tr> 

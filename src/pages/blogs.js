@@ -13,8 +13,8 @@ export default class Blogs extends Component {
     return (
       <Layout>
         <SEO
-          title="Blogs"
-          keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`, `Blogs`]}
+          title="Portfolio"
+          keywords={[`Mitch Lum`, `Frontend Developer`, `Developer`, `Portfolio`]}
         />
         <div className="site-container blogs-page" id="Blogs">
           <div className="container">
@@ -30,7 +30,7 @@ export default class Blogs extends Component {
                 return (
                   <li key={index} className="item">
                     <div className="inner">
-                      <Link className="link" to={item.node.slug} />
+                      <Link className="link" to={`/${item.node.slug}`} />
                       {item.node.featureImage ? (
                         <Img
                           fixed={item.node.featureImage.fluid}

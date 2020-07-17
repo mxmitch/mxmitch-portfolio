@@ -33,7 +33,6 @@ var settings = {
 export default class Photos extends Component {
   render() {
     const { data } = this.props;
-
     return (
       <div className="photos section" id="Photos">
         <div className="container">

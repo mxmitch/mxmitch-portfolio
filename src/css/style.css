@@ -609,6 +609,7 @@ h2:after,
 }
 .site-footer {
   padding: 20px;
+  font-weight: 300;
   background: #333;
   text-align: center;
   color: #fff;

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import moment from "moment";
 import { DiscussionEmbed } from "disqus-react";
-import Img from "gatsby-image/withIEPolyfill"
+import Img from "gatsby-image/withIEPolyfill";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from "react-responsive-carousel";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -41,14 +43,20 @@ export default class blogPost extends Component {
         />
         <div className="site-container blog-post">
           <div className="container">
-            {data.featureImage ? (
-              <Img
-                className="feature-img"
-                fixed={data.featureImage.fluid}
-                width="100%"
-                height="100%"
-                objectFit="contain"
-              />
+            {data.imageSlider[0] ? (
+              <Carousel showArrows={true} showThumbs={false}>
+                {data.imageSlider.map(photo => {
+                  return (
+                    <Img
+                      className="feature-img"
+                      fixed={photo.fluid}
+                      width="100%"
+                      height="100%"
+                      objectFit="contain"
+                    /> 
+                  )
+                })}
+              </Carousel>
             ) : (
               <div className="no-image"></div>
             )}
@@ -91,6 +99,14 @@ export const pageQuery = graphql`
       id
       title
       slug
+      imageSlider {
+        fluid {
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
+        }
+      }
       featureImage {
         fluid(maxWidth: 1500) {
           base64

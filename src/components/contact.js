@@ -8,6 +8,10 @@ export default class Contact extends Component {
           <div className="section-head">
             <h2 className="text-center">Contact</h2>
           </div>
+          <div style={{textAlign: "center"}}>
+            <h4>Like what you see? Let's have a chat.</h4>
+            <p>I can be contacted at <a href="mailto:mklum88@gmail.com">mklum88@gmail.com</a> or through the form below.</p>
+          </div>
           <form
             action={`https://formspree.io/${this.props.data}`}
             name="contact"
