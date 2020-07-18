@@ -38,7 +38,7 @@ export default class blogPost extends Component {
         <div className="site-container blog-post">
           <div className="container">
             {data.imageSlider[0] ? (
-              <Carousel>
+              <Carousel fade={false}>
                 {data.imageSlider.map(photo => {
                   return (
                     <Carousel.Item style={{backgroundColor: "#333", color:"#333"}}>
@@ -93,17 +93,17 @@ export const pageQuery = graphql`
       title
       slug
       imageSlider {
-        fluid {
-          base64
-          tracedSVG
+        fluid(maxWidth: 1500) {
+          aspectRatio
+          src
+          srcSet
           srcWebp
           srcSetWebp
+          sizes
         }
       }
       featureImage {
         fluid(maxWidth: 1500) {
-          base64
-          aspectRatio
           src
           srcSet
           srcWebp
