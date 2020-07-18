@@ -12,6 +12,7 @@ import Blogs from "../components/blogs";
 // import Testimonial from "../components/testimonial";
 // import Photos from "../components/photos";
 import Contact from "../components/contact";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const IndexPage = ({ data }) => (
   <Layout header="home">

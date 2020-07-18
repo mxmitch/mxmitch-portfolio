@@ -173,6 +173,7 @@ body {
 .banner .banner-details .social li a:hover:after {
   top: 0;
 }
+
 .site-header .header-main {
   display: flex;
   justify-content: center;

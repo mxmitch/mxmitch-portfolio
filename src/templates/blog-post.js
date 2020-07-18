@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import moment from "moment";
-import { DiscussionEmbed } from "disqus-react";
 import Img from "gatsby-image/withIEPolyfill";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import { Carousel } from "react-responsive-carousel";
+import { Carousel } from "react-bootstrap";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -13,11 +12,6 @@ import Share from "../components/share";
 export default class blogPost extends Component {
   render() {
     const data = this.props.data.contentfulBlogs;
-    const disqusShortname = "MitchLum";
-    const disqusConfig = {
-      identifier: data.id,
-      title: data.title
-    };
 
     const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
     const twiteerhandle = this.props.data.contentfulSiteInformation
@@ -37,23 +31,26 @@ export default class blogPost extends Component {
           keywords={[
             `Mitch Lum`,
             `Frontend Developer`,
-            `Developer`,
+            `Web Developer`,
             `${data.title}`
           ]}
         />
         <div className="site-container blog-post">
           <div className="container">
             {data.imageSlider[0] ? (
-              <Carousel showArrows={true} showThumbs={false}>
+              <Carousel>
                 {data.imageSlider.map(photo => {
                   return (
-                    <Img
-                      className="feature-img"
-                      fixed={photo.fluid}
-                      width="100%"
-                      height="100%"
-                      objectFit="contain"
-                    /> 
+                    <Carousel.Item style={{backgroundColor: "#333", color:"#333"}}>
+                      <Img
+                        className="feature-img"
+                        fluid={photo.fluid}
+                        width="100%"
+                        height="100%"
+                        objectFit="contain"
+                        alt={data.slug}
+                      /> 
+                    </Carousel.Item>
                   )
                 })}
               </Carousel>
@@ -81,10 +78,6 @@ export default class blogPost extends Component {
                   title: `${socialConfigss.title}`
                 }
               }}
-            />
-            <DiscussionEmbed
-              shortname={disqusShortname}
-              config={disqusConfig}
             />
           </div>
         </div>
