@@ -104,6 +104,7 @@ export const pageQuery = graphql`
       }
       featureImage {
         fluid(maxWidth: 1500) {
+          aspectRatio
           src
           srcSet
           srcWebp
