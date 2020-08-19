@@ -23,7 +23,7 @@ img {
 }
 
 a {
-  color: #ef5826;
+  color: #ec1c24;
 }
 
 h2 {
@@ -157,7 +157,7 @@ body {
 }
 .banner .banner-details .social li a:after {
   content: "";
-  background: #ef5826;
+  background: #ec1c24;
   position: absolute;
   top: -100%;
   left: 0;
@@ -310,11 +310,12 @@ body {
 }
 
 .service-main {
+  height: 100%;
   text-align: center;
   box-shadow: 3px 3px 8px 2px #0000000a;
   padding: 30px 30px;
   transition: 0.5s all;
-  background: #ccc;
+  background: #fff8aa;
   box-shadow: 3px 3px 8px 2px #0000002b;
 }
 .section:nth-child(even) .service-main {
@@ -552,7 +553,7 @@ h2:after,
   height: 1px;
   display: inline-block;
   position: absolute;
-  background: #ef5826;
+  background: #ec1c24;
   top: 100%;
   left: 0;
 }
