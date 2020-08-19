@@ -45,7 +45,7 @@ h5 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .banner {
@@ -305,7 +305,7 @@ body {
   padding: 10px 15px 10px 15px;
 }
 
-.about-details tr:nth-child(even) {
+.about-details tr:nth-child(odd) {
   background: #ccc;
 }
 
@@ -314,15 +314,13 @@ body {
   box-shadow: 3px 3px 8px 2px #0000000a;
   padding: 30px 30px;
   transition: 0.5s all;
-  background: #fff;
+  background: #ccc;
+  box-shadow: 3px 3px 8px 2px #0000002b;
 }
 .section:nth-child(even) .service-main {
   background: #fafafe;
 }
-.service-main:hover {
-  box-shadow: 3px 3px 8px 2px #0000002b;
-  transition: 0.5s all;
-}
+
 .slick-slider .slick-list div {
   display: flex;
   width: 100%;
@@ -482,6 +480,7 @@ form > div {
   right: 0;
   z-index: 1;
   color: #fff;
+  text-align: center;
 }
 .blogs-list .item .inner img {
   width: 100% !important;

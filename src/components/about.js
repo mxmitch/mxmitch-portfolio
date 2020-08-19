@@ -23,7 +23,6 @@ const Header = ({ data }) => (
               }}
             />
             <h4>Technical Skills</h4>
-            <hr style={{borderTop:"1px solid black"}}></hr>
             <table>
               <tr> 
                 <td><strong>Languages</strong></td>

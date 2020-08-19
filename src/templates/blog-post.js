@@ -42,6 +42,7 @@ export default class blogPost extends Component {
                 {data.imageSlider.map(photo => {
                   return (
                     <Carousel.Item style={{backgroundColor: "#333", color:"#333"}}>
+                    
                       <Img
                         className="feature-img"
                         fluid={photo.fluid}
