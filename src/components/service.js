@@ -7,7 +7,7 @@ export default class service extends Component {
     const { data } = this.props;
     return (
       <div className="service section" id="Service">
-        <div className="container">
+        <div className="container padding-offset">
           <div className="section-head">
             <h2>Services</h2>
           </div>

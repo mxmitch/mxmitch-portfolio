@@ -8,7 +8,7 @@ export default class Blogs extends Component {
     const { data } = this.props;
     return (
       <div className="blogs-section section" id="Blogs">
-        <div className="container">
+        <div className="container padding-offset">
           <div className="section-head">
             <h2>Portfolio</h2>
           </div>

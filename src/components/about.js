@@ -3,7 +3,7 @@ import Img from "gatsby-image";
 
 const Header = ({ data }) => (
   <div className="about section" id="About">
-    <div className="container">
+    <div className="container padding-offset">
       <div className="about-main row">
         <div className="left col-md-5 col-lg-4 mb-3">
           <Img

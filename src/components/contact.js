@@ -4,7 +4,7 @@ export default class Contact extends Component {
   render() {
     return (
       <div className="contact section" id="Contact">
-        <div className="container">
+        <div className="container padding-offset">
           <div className="section-head">
             <h2 className="text-center">Contact</h2>
           </div>
