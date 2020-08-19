@@ -68,7 +68,6 @@ export const pageQuery = graphql`
           slug
           featureImage {
             fluid(maxWidth: 1500) {
-              base64
               aspectRatio
               src
               srcSet
