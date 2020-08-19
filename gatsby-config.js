@@ -9,7 +9,7 @@ const { spaceId, accessToken } = process.env;
 module.exports = {
   siteMetadata: {
     title: `Mitch Lum`,
-    description: `Personal Site`,
+    description: `Mitch Lum Web Designer/Developer Portfolio`,
     author: `@mxmitchs`
   },
   plugins: [
