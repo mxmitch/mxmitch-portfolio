@@ -16,7 +16,7 @@ export default class service extends Component {
               return (
                 <div key={index} className="col-md-4 mb-3">
                   <div className="service-main">
-                    <img src={item.node.icon.file.url} alt="service icon" height="50px" style={{ paddingBottom: '15px'}}/>
+                    <Img src={item.node.icon.file.url} alt="service icon" height="50px" style={{ paddingBottom: '15px'}}/>
                     <h3>{item.node.title}</h3>
                     <div
                       dangerouslySetInnerHTML={{
